@@ -1,0 +1,129 @@
+:root {
+  --navy: #102a4c;
+  --blue: #1767dc;
+  --mist: #f3f7fc;
+  --line: #e2eaf4;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--navy);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Work Sans", sans-serif;
+}
+
+.site-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav-glass {
+  background: rgba(255, 255, 255, .94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+
+.soft-card {
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 38px rgba(16, 42, 76, .055);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.soft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 46px rgba(16, 42, 76, .12);
+}
+
+.action {
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+
+.action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(23, 103, 220, .2);
+}
+
+:focus-visible {
+  outline: 3px solid #67a7ff;
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(circle at 85% 30%, #dceaff 0%, transparent 46%),
+    linear-gradient(125deg, #fff 15%, #f3f7fc 100%);
+}
+
+.photo-frame {
+  box-shadow: 24px 24px 0 #dceaff, 0 24px 60px rgba(16, 42, 76, .13);
+}
+
+.project-detail[hidden],
+#mobile-menu[hidden] {
+  display: none;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: 16px;
+  max-width: 760px;
+}
+
+.contact-link {
+  display: flex;
+  min-height: 112px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(16, 42, 76, .1);
+}
+
+.contact-link img {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 640px) {
+  .contact-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
